@@ -92,12 +92,12 @@ body._lock {
 	position: relative;
 	z-index: 5;
 	width: 50px;
-	height: 50px;
+	height: auto;
 }
 .header__logo img{
 	max-width: 50px;
-	max-height: 50px;
-	border-radius: 50% 50% 0 0;
+	max-height: auto;
+	border-radius: 50% 50% 50% 50%;
 }
 .header__menu{
 	margin: 0px 0px 0px 0px;
@@ -118,7 +118,7 @@ body._lock {
 }
 .menu__link {
 	color: #CCCCFF;
-	font-size: 18px;
+	font-size: 20px;
 }
 .menu__link:hover {
 	text-decoration: underline;
@@ -131,6 +131,7 @@ body._lock {
 	background-color: #77608d;
 	padding: 10px;
 	min-width: 180px;
+	font-size: 18px;
 }
 .menu__sub-list li {
 	margin:  0px 0px 10px 0px;
@@ -295,7 +296,7 @@ body._touch .menu__list > li._active .menu__arrow {
 	color: #5e5373;
 }
 
-@media (max-width: 766px){
+@media (max-width: 767px){
 /*	.menu__body{display: none;
 	}
 */	.shapka {
@@ -307,19 +308,17 @@ body._touch .menu__list > li._active .menu__arrow {
 	.header{
 		width: 100%;
 	}
-	.header__logo{
-		z-index: 2;
-		width: 60px;
-		height: 70px;
-		background-color: #5e5373;
+	.header__logo {
+		position: relative;
+		z-index: 5;
+		width: 50px;
+		height: auto;
 	}
 	.header__logo img{
-		max-width: 60;
-		max-height: 70px;
-		/*border-radius: 30%;*/
-		background-color: #5e5373;
+		max-width: 50px;
+		max-height: auto;
+		border-radius: 50% 50% 50% 50%;
 	}
-
 	.menu__icon {
 		z-index: 5;
 		display: block;
@@ -403,7 +402,7 @@ body._touch .menu__list > li._active .menu__arrow {
 	.menu__link {
 		font-size: 24px;
 	}
-	.menu__sub-list {
+	/*.menu__sub-list {
 		position: relative;
 		background-color: #77608d;
 		flex: 1 1 100%;
@@ -413,7 +412,7 @@ body._touch .menu__list > li._active .menu__arrow {
 	.menu__sub-link {
 		font-size: 20px;
 		color: #fff;
-	}
+	}*/
 
 	.menu__sub-list {
 		position: relative;
@@ -577,11 +576,11 @@ body._touch .menu__list > li._active .menu__arrow {
 	}
 
 
-.three-block__title {
-	font-size: 25px;
-	color: #006
-	margin: 0px 0px 40px 0px;
-}
+	.three-block__title {
+		font-size: 25px;
+		color: #006
+		margin: 0px 0px 40px 0px;
+	}
 }
 @media (min-width: 992px){
 	.three-block {
