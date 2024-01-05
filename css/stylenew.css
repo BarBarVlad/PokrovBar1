@@ -486,7 +486,7 @@ body._touch .menu__list > li._active .menu__arrow {
 
 	}
 	.three-block__text{
-		color: #fff;
+		color: #404a48;
 		line-height: 25px;
 		font-size: 16px;
 
@@ -494,6 +494,26 @@ body._touch .menu__list > li._active .menu__arrow {
 		min-width: 0;
 		/*!!!!!!!!!!!!!!!!*/
 
+	}
+	.three-block__text h2,h1{
+		font-size: 27px;
+		text-align: center;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+		color: #404a48;
+		/*line-height: 25px;*/
+	}
+	.three-block__text p{
+		font-size: 20px;
+		text-align:justify;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+
+		/*color: #fff;*/
+		line-height: 22px;
+		padding: 2px 5px;
 	}
 	.two-block{
 		/*!!!!!!!!!!!!!!!!*/
@@ -621,8 +641,28 @@ body._touch .menu__list > li._active .menu__arrow {
 		max-height:auto;
 	}
 	.three-block__text{
-		color: #fff;
+		color: #404a48;
 		line-height: 25px;
+	}
+	.three-block__text h2{
+		font-size: 27px;
+		text-align: center;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+		color: #404a48;
+		/*line-height: 25px;*/
+	}
+	.three-block__text p{
+		font-size: 20px;
+		text-align:justify;
+		/*!!!!!!!!!!!!!!!!*/
+		min-width: 0;
+		/*!!!!!!!!!!!!!!!!*/
+
+		/*color: #fff;*/
+		line-height: 22px;
+		padding: 2px 5px;
 	}
 	.two-block{
 
