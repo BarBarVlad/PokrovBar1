@@ -164,7 +164,8 @@
 								var mkpsedm;
 								var dkpsedm;
 								if (k==4) {mkpsedm=k;dkpsedm=fsd[k][i*9]+8;}
-							 	else{if(k==3 && fsd[k][i*9]<23){mkpsedm=k;dkpsedm=fsd[k][i*9]+8;}
+							 	else{if(k==3 && fsd[k][i*9]<23){mkpsedm=k;dkpsedm=fsd[k][i*9]+8;
+							 		/*console.log('dkpsedm=',dkpsedm);*/}
 							 		  else {mkpsedm=k+1;dkpsedm=pXr[1][fh1]-22;}}
 								fsd=post(k,i+1,mkpsedm,dkpsedm,dwfirstm,fsd,8);
 					// Радоница
@@ -187,19 +188,25 @@
 					// Троицкая суббота (красивое решение)
 							if (k==pTr[0][fh1] && fsd[k][i*9]==pTr[1][fh1]){
 								if (pTr[1][fh1]!=1) {fsd[k].splice((i-1)*9+3,1,1);}
-							 	else{fsd[k-1].splice((dwfirstm[k-1]+ldaymths[k-1]-2)*9+3,1,1);}
-	// Отмечает сплошную Троицкую седмицу
+							 	 else{fsd[k-1].splice((dwfirstm[k-1]+ldaymths[k-1]-2)*9+3,1,1);
+							 	 }
+	// Отмечает сплошную Троицкую седмицу 
 								var mktrsedm,dktrsedm;
-								if (k=5) {
-									if(fsd[k][i*9]<23){
-										mktrsedm=k;dktrsedm=fsd[k][i*9]+8;}
-									 else {mktrsedm=k+1;dktrsedm=pTr[1][fh1]-22;}
+								if (k==5) {
+									if(fsd[k][i*9]<23){mktrsedm=k; dktrsedm=fsd[k][i*9]+8;}
+									 else {mktrsedm=k+1; dktrsedm=pTr[1][fh1]-23;}
 									}
 							 	else{
-							 		 if(fsd[k][i*9]<23){mktrsedm=k;dktrsedm=fsd[k][i*9]+8;}
-							 		 else {mktrsedm=k+1;dktrsedm=pTr[1][fh1]-23;}
+							 		 if(fsd[k][i*9]<23){mktrsedm=k; dktrsedm=fsd[k][i*9]+8;}
+							 		 else {mktrsedm=k+1; dktrsedm=pTr[1][fh1]-23;
+/*							 		 console.log('k=',k);
+							 		 console.log('i+1=',i+1);
+							 		 console.log('mktrsedm=',mktrsedm);
+							 		 console.log('dktrsedm=',dktrsedm);
+							 		 console.log('dwfirstm=',dwfirstm);
+							 		 console.log('fsd=',fsd);*/}
 							 		}
-								fsd=post(k,i+1,mktrsedm,dktrsedm,dwfirstm,fsd,8);
+								fsd=post(k,i,mktrsedm,dktrsedm,dwfirstm,fsd,8);
 							}
 					// Димитровская суббота
 							if (k==10 && fsd[k][i*9]==1){
@@ -247,7 +254,8 @@
 								var ldpTr=pTr[1][fh1];
 								var petpm=0;
 								var petpd=0;
-								if (k==4 && ldpTr<24){petpm=4; petpd=ldpTr+8;}
+/*								console.log('lmpTr=', lmpTr, '  ldpTr=', ldpTr);
+*/								if (k==4 && ldpTr<24){petpm=4; petpd=ldpTr+8;}
 								if (k==4 && ldpTr>24){petpm=5; petpd=ldpTr-23;}
 								if (k==5 && ldpTr<23){petpm=5; petpd=ldpTr+8;}
 								if (k==5 && ldpTr>23){petpm=6; petpd=ldpTr-22;}
@@ -278,7 +286,21 @@
 	 }
 	}
 	//  Отмечает подвижные двунадесятые праздники
-							if ((pVV[0][fh1]==k && pVV[1][fh1]==fsd[k][i*9])||(pVo[0][fh1]==k && pVo[1][fh1]==fsd[k][i*9])||(pTr[0][fh1]==k && pTr[1][fh1]==fsd[k][i*9])){fsd[k].splice(i*9+5,1,1);}
+							if ((pVV[0][fh1]==k && pVV[1][fh1]==fsd[k][i*9])||(pVo[0][fh1]==k && pVo[1][fh1]==fsd[k][i*9])) {fsd[k].splice(i*9+5,1,1);
+/*								console.log('kv=', k);
+								console.log('pVV[0][fh1]=', pVV[0][fh1]);
+								console.log(' pVV[1][fh1]=', pVV[1][fh1]);
+								console.log(' pVo[1][fh1]=', pVo[1][fh1]);
+								console.log('fsd[k][i*9]=', fsd[k][i*9]);
+								console.log('pTr[0][fh1]=', pTr[0][fh1]);
+								console.log(' pTr[1][fh1]=', pTr[1][fh1]);
+*/						}
+							if (pTr[0][fh1]==k && pTr[1][fh1]==fsd[k][i*9]){fsd[k].splice(i*9+5,1,1);
+/*								console.log('k=', k);
+								console.log('pTr[0][fh1]=', pTr[0][fh1]);
+								console.log(' pTr[1][fh1]=', pTr[1][fh1]);
+								console.log('fsd[k][i*9]=', fsd[k][i*9]);
+*/							}
 	//  Отмечает Пасху
 						}
 					}
@@ -304,6 +326,7 @@
 				return fstday;
 			}
 // post отмечает в массиве fsd (стиль дня для вывода на экран) многодневные посты и сплошные седмицы
+	//            4  34   5     8                     8
 	function post(k1,i1,mkpost,dkpost,fdwfirstm,ffsd,ik){
 		while(k1<mkpost || (k1==mkpost && ffsd[k1][i1*9]<dkpost)){
 			if (ffsd[k1][i1*9]==0) {
